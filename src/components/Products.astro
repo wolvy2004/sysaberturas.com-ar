@@ -1,0 +1,193 @@
+---
+
+---
+
+<section id="productos">
+  <article>
+    <div class="descripcion">
+      <h1>linea Herrero</h1>
+      <p>
+        Las aberturas de aluminio de la línea herrero se caracterizan por su
+        robustez y resistencia, ya que están diseñadas para aplicaciones
+        comerciales, industriales y residenciales que requieren una mayor
+        durabilidad y seguridad. Estas aberturas suelen tener perfiles más
+        gruesos y una apariencia más sólida en comparación con otros tipos de
+        aberturas de aluminio. <br /><br />
+        <hr />
+        <br />
+        <p>
+          <strong>
+            Algunas características de las aberturas de aluminio de la línea
+            herrero incluyen:</strong
+          >
+        </p>
+        <ul>
+          <li>
+            <span>Robustez:</span> Los perfiles de aluminio utilizados en estas aberturas
+            son más gruesos y sólidos, lo que proporciona una mayor resistencia estructural.
+            Versatilidad: Aunque son más comunes en aplicaciones comerciales e industriales,
+            las aberturas de aluminio de la línea herrero también se utilizan en
+            proyectos residenciales que requieren un mayor nivel de seguridad y durabilidad.
+          </li>
+          <li>
+            <span>Variedad de diseños:</span> Aunque tradicionalmente las aberturas
+            de aluminio de la línea herrero tienen un aspecto más industrial, hoy
+            en día hay una variedad de diseños disponibles para adaptarse a diferentes
+            estilos arquitectónicos.
+          </li>
+          <li>
+            <span>Acabados y colores:</span> Estas aberturas suelen estar disponibles
+            en una amplia gama de acabados y colores, lo que permite una mayor personalización
+            para satisfacer las necesidades estéticas de cada proyecto.
+          </li>
+          <li>
+            <span>Aislamiento térmico y acústico:</span> Aunque las aberturas de
+            aluminio no son conocidas por su excelente aislamiento térmico y acústico
+            en comparación con otros materiales como el PVC o la madera, las versiones
+            más modernas de la línea herrero a menudo incorporan mejoras en este
+            aspecto.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <picture>
+      <img src="../../public/imgs/lherrero.png" alt="" />
+    </picture>
+  </article>
+  <article>
+    <div class="descripcion">
+      <h1>linea Modena</h1>
+      <p>
+        La línea Modena en aberturas de aluminio es otra opción popular y
+        ampliamente utilizada en la industria de la construcción, especialmente
+        en el contexto de países de habla hispana como Argentina. Esta línea se
+        distingue por su diseño más contemporáneo y elegante, ofreciendo una
+        estética más moderna en comparación con las aberturas de la línea
+        herrero. <br /><br />
+        <hr />
+        <br />
+        <p>
+          <strong>
+            A continuación, algunas características destacadas de la línea
+            Modena en aberturas de aluminio:</strong
+          >
+        </p>
+        <ul>
+          <li>
+            <span>Diseño contemporáneo:</span>Las aberturas de aluminio de la
+            línea Modena están diseñadas con líneas más limpias y modernas, lo
+            que las hace ideales para proyectos arquitectónicos que requieren un
+            aspecto más actualizado.
+          </li>
+          <li>
+            <span>Perfil delgado:</span>A diferencia de las aberturas de la
+            línea herrero, las aberturas de la línea Modena suelen tener
+            perfiles más delgados, lo que proporciona una apariencia más
+            estilizada y minimalista.
+          </li>
+          <li>
+            <span>Versatilidad estética:</span> La línea Modena ofrece una amplia
+            gama de opciones de diseño, incluyendo diferentes tipos de aperturas
+            (corredizas, batientes, pivotantes, etc.), acabados y colores. Esto permite
+            una mayor personalización para adaptarse a las preferencias estéticas
+            de cada proyecto.
+          </li>
+          <li>
+            <span>Aislamiento térmico y acústico:</span> Si bien el aluminio no es
+            naturalmente un buen aislante térmico o acústico, las aberturas de la
+            línea Modena a menudo incorporan tecnologías avanzadas de aislamiento
+            para mejorar su rendimiento en estos aspectos, lo que las hace más eficientes
+            energéticamente. aspecto.
+          </li>
+          <li>
+            <span>Durabilidad y resistencia::</span> Aunque las aberturas de la línea
+            Modena pueden tener perfiles más delgados, siguen siendo robustas y duraderas
+            debido a la naturaleza resistente del aluminio. Además, el aluminio es
+            un material que no se corroe, lo que garantiza una larga vida útil de
+            las aberturas.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <picture>
+      <img src="../../public/imgs/lmodena.png" alt="" />
+    </picture>
+  </article>
+
+  <style>
+    section {
+      z-index: 2;
+      background: linear-gradient(
+        to top right,
+        var(--var-primary-color),
+        var(--var-secondary-color)
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    article {
+      border-left: 20px solid var(--var-primary-color);
+      border-right: 20px solid var(--var-secondary-color);
+      background-color: var(--var-bg-color);
+      padding: 2em 4em;
+      width: 70%;
+      display: flex;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      h1 {
+        color: var(--var-bg-color);
+        font-size: 2em;
+        padding: 0.5em 1em;
+        margin-bottom: 1em;
+        background-color: var(--var-primary-color);
+      }
+      p {
+        color: var(--var-text-color);
+        width: 75%;
+      }
+      ul {
+        color: var(--var-text-color);
+        font-size: 1.1em;
+
+        li {
+          list-style: none;
+          padding: 1em;
+          line-height: 1.7em;
+        }
+        span {
+          color: var(--var-secondary-color);
+          font-weight: bold;
+        }
+      }
+      picture {
+        position: relative;
+        margin: 1em 2em;
+      }
+
+      img {
+        position: relative;
+        z-index: 5;
+        width: 350px;
+      }
+      picture::after {
+        position: absolute;
+        top: 0px;
+        left: -135px;
+        z-index: 1;
+        content: "";
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: var(--var-secondary-color);
+        &:nth-child(even) {
+          top: 0px;
+          left: 235px;
+        }
+      }
+    }
+  </style>
+</section>

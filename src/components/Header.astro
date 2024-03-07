@@ -1,0 +1,105 @@
+---
+interface links {
+  link: string;
+  name: string;
+}
+let links: Array<links> = [
+  {
+    link: "#",
+    name: "home",
+  },
+  {
+    link: "#productos",
+    name: "productos",
+  },
+  {
+    link: "#empresa",
+    name: "Nuestra Empresa",
+  },
+  {
+    link: "#contacto",
+    name: "contacto",
+  },
+  {
+    link: "#presupuesto",
+    name: "Presupuesto",
+  },
+];
+---
+
+<header>
+  <picture>
+    <img src="imgs/logo.svg" alt="" />
+  </picture>
+  <nav>
+    <ul>
+      {links.map((link) => <a href={link.link}>{link.name}</a>)}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 210px;
+    width: 100%;
+    background: linear-gradient(to bottom, white, 85%, rgb(126, 124, 124));
+    picture img {
+      margin-bottom: 30px;
+      width: 450px;
+      height: 140px;
+    }
+    nav {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 40px;
+      width: 100%;
+      background: #50024c;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          position: relative;
+          padding: 0px 15px;
+          line-height: 40px;
+          font-size: 20px;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: white;
+          transition: 0.3s ease-in;
+          &:hover {
+            background-color: rgb(255, 255, 255);
+            color: #50024c;
+          }
+
+          &::before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            border-left: 10px solid white;
+            border-right: 10px solid transparent;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid white;
+            transform: rotate(-45deg) translateX(-50%);
+            opacity: 0;
+            transition: 0.2s ease-in;
+          }
+          &:hover::before {
+            opacity: 1;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+</style>

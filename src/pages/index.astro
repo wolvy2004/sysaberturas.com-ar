@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Products from "../components/Products.astro";
+import Header from "../components/Header.astro";
+import Empresa from "../components/Empresa.astro";
+import Home from "../components/Home.astro";
+---
+
+<Layout title="Bienvenidos a SyS Aberturas." />
+
+<Header slot="header" />
+<Home slot="home" />
+<Products slot="productos" />
+<Empresa slot="empresa" />
+
+<style>
+  html {
+    scroll-behavior: smooth;
+    height: 100vh;
+    background-color: rgb(23, 34, 44);
+    color: aliceblue;
+  }
+  section {
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 4em;
+  }
+  p {
+    font-size: 1.2em;
+    line-height: 2em;
+  }
+</style>
