@@ -1,18 +1,99 @@
 ---
+interface material {
+  nombre: string;
+  id?: number;
+}
 
+const materiales: Array<material> = [
+  {
+    id: 1,
+    nombre: "aluminio",
+  },
+  { id: 2, nombre: "pvc" },
+  {
+    id: 3,
+    nombre: "madera",
+  },
+];
 ---
 
 <section id="presupuesto">
-  <h1>presupuesto</h1>
-  <form action="">
+  <h1 class="saira-condensed-medium text-5xl text-center">presupuesto</h1>
+  <form id="formulario" action="">
     <input type="text" placeholder="nombre y apellido" id="name" />
-    <input type="text" name="email" id="emial" />
+    <input type="text" name="email" id="email" />
     <input type="text" name="" id="" />
+    <select name="material" id="material">
+      <option value="0">Seleccionar Opcion </option>
+      {
+        materiales.map((m) => (
+          <option value={m.id}>{m.nombre.toUpperCase()} </option>
+        ))
+      }
+    </select>
+    <select name="linea" id="linea">
+      <option value="0" aria-readonly="true">seleccione un producto</option>
+    </select>
+    <div class="content-medida">
+      <input type="number" required placeholder=" " name="alto" />
+      <label for="alto">altura</label>
+      <input type="number" required placeholder=" " name="ancho" />
+      <label for="alto">ancho</label>
+    </div>
   </form>
 </section>
+<script is:inline>
+  const linea = [
+    [],
+    ["herrero", "modena", "premium"],
+    ["economica", "media", "premium"],
+    ["melamina", "contrachapado", "mdf"],
+  ];
+  const tipo = [
+    ["Puerta", "Ventana", "Porton"],
+    ["Ciega", "Con vidrio repartido", "Vidrio entero"],
+    ["Con vidrio repartido", "Vidrio entero"],
+    ["Corrediza", "Patagonica"],
+  ];
+  let select_material = document.getElementById("material");
+  let select_linea = document.getElementById("linea");
+  select_material.addEventListener("change", (e) => {
+    // removemos los options
+
+    if (select_linea != null) {
+      while (select_linea.firstChild) {
+        select_linea.removeChild(select_linea.firstChild);
+      }
+    }
+
+    select_prod_linea = linea[select_material.value];
+
+    if (select_prod_linea.length > 0) {
+      select_prod_linea.forEach((linea) => {
+        let option = document.createElement("option");
+        option.setAttribute("value", linea);
+        text = document.createTextNode(linea);
+        option.appendChild(text);
+        select_linea.appendChild(option);
+      });
+    }
+  });
+</script>
 <style>
   section {
+    color: black;
     height: 100vh;
-    background-color: brown;
+    background-color: var(--var-violet200);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .select,
+  input,
+  select {
+    color: var(--var-text-color);
+    margin: 1em;
+    padding: 0.5em;
   }
 </style>

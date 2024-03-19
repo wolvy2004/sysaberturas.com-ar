@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Capa_1"
+   data-name="Capa 1"
+   viewBox="0 0 1030.14 474.85"
+   version="1.1"
+   sodipodi:docname="logo_aberturas.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.45916088"
+     inkscape:cx="684.9451"
+     inkscape:cy="238.4785"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">&#10;      .cls-1 {&#10;        font-size: 184.86px;&#10;      }&#10;&#10;      .cls-1, .cls-2 {&#10;        fill: #a8a8a8;&#10;      }&#10;&#10;      .cls-1, .cls-3 {&#10;        font-family: DejaVuSansCondensed-Bold, 'DejaVu Sans';&#10;        font-weight: 700;&#10;      }&#10;&#10;      .cls-4 {&#10;        fill: #e77818;&#10;      }&#10;&#10;      .cls-4, .cls-5, .cls-2 {&#10;        stroke-width: 0px;&#10;      }&#10;&#10;      .cls-5 {&#10;        fill: #64225f;&#10;      }&#10;&#10;      .cls-3 {&#10;        fill: #333233;&#10;        font-size: 113.46px;&#10;      }&#10;    </style>
+  </defs>
+  <polygon
+     class="cls-4"
+     points="286.47 433.53 286.47 150.13 6.13 150.13 286.47 433.53"
+     id="polygon1" />
+  <polygon
+     class="cls-5"
+     points="0 0 0 127.15 127.15 127.15 45.96 45.96 387.57 45.96 387.57 387.57 308.43 308.43 308.43 433.53 433.53 433.53 433.53 0 0 0"
+     id="polygon2" />
+  <polygon
+     class="cls-2"
+     points="93.96 67.4 156.26 129.7 307.5 129.7 307.5 280.94 367.15 340.6 367.15 67.4 93.96 67.4"
+     id="polygon3" />
+  <text
+     class="cls-3"
+     transform="translate(467.64 427.76) scale(.97 1)"
+     id="text3"><tspan
+       x="0"
+       y="0"
+       id="tspan3">Aberturas</tspan></text>
+  <text
+     class="cls-1"
+     transform="translate(675.3 182.56)"
+     id="text4"><tspan
+       x="0"
+       y="0"
+       id="tspan4">&amp;</tspan></text>
+  <path
+     class="cls-5"
+     d="M549.04,181.58c-43.95-22.27-67.54-43.41-73.11-77.17-2.2-13.35-1.91-33.81,11.97-55.46,14.85-23.16,45.4-41.05,66.38-44.99,19.55-3.67,45.73-1.55,80.03,6.48,21.31,4.99,42.95,11.77,49.09,14.44l-31.81,73.17c.26.11.64.28,1.17.48-16.7-6.24-60.3-19.4-77.27-16.62-6.76.02-7.04,12.98-2.23,18.92,4.28,3.93-2.73,1.41,19.67,13.66,64.4,35.23,77.88,52.81,81.89,59.94,13.63,24.22,21.84,64.08-16.75,105.31-13.99,14.94-42.56,31.26-86.41,31.26-2.24,0-4.53-.04-6.87-.14-30.62-1.22-65.78-10.77-101.67-27.63l33.92-72.21c56.79,26.68,81.94,24.52,90.41,15.47,3.83-4.09,3.56-9.6.64-15.36-6.32-12.5-9.17-10.94-16.2-16.35M569.75,82.2h0Z"
+     id="path4" />
+  <path
+     class="cls-4"
+     d="M893.01,179.36c-43.95-22.27-67.54-43.41-73.11-77.17-2.2-13.35-1.91-33.81,11.97-55.46,14.85-23.16,45.4-41.05,66.38-44.99,19.55-3.67,45.73-1.55,80.03,6.48,21.31,4.99,42.95,11.77,49.09,14.44l-31.81,73.17c.26.11.64.28,1.17.48-16.7-6.24-60.3-19.4-77.27-16.62-6.76.02-7.04,12.98-2.23,18.92,4.28,3.93-2.73,1.41,19.67,13.66,64.4,35.23,77.88,52.81,81.89,59.94,13.63,24.22,21.84,64.08-16.75,105.31-13.99,14.94-42.56,31.26-86.41,31.26-2.24,0-4.53-.04-6.87-.14-30.62-1.22-65.78-10.77-101.67-27.63l33.92-72.21c56.79,26.68,81.94,24.52,90.41,15.47,3.83-4.09,3.56-9.6.64-15.36-6.32-12.5-9.17-10.94-16.2-16.35M913.72,79.99h0Z"
+     id="path5" />
+</svg>

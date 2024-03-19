@@ -10,7 +10,11 @@
   </div>
   <article>
     <h1 class="saira-condensed-thin text-9xl p-4">30 años de trayectoria</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ducimus voluptate autem dicta magnam mollitia, expedita, nihil ad esse provident ut quae rerum, fuga nam temporibus ipsa blanditiis nulla? Soluta.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ducimus
+      voluptate autem dicta magnam mollitia, expedita, nihil ad esse provident
+      ut quae rerum, fuga nam temporibus ipsa blanditiis nulla? Soluta.
+    </p>
   </article>
 </section>
 <style>
@@ -61,11 +65,30 @@
     bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
-    h1{
+    h1 {
       font-size: 2em;
     }
-    p{
+    p {
       font: 1em sans-serif;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    .content_slider {
+      height: 400px;
+      object-fit: fit;
+    }
+    section {
+      overflow: hidden;
+      min-height: 100vh;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .content_slider {
+    }
+    section {
+      overflow: hidden;
+      width: 100%;
+      min-height: 100vh;
     }
   }
 </style>

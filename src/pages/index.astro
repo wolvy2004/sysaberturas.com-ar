@@ -23,25 +23,27 @@ import Whatsapp from "../components/Whatsapp.astro";
   var header = document.getElementById("header");
   window.addEventListener("scroll", () => {
     header?.classList.toggle("scrollear", window.scrollY > 0);
+    var headerHeight = header?.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--scroll-padding",
+      headerHeight + "px"
+    );
   });
-  var headertop = document.getElementById("header.scrollear");
-  var headerHeight = headertop?.offsetHeight;
-  console.log(headertop);
-  document.documentElement.style.setProperty(
-    "--scroll-padding",
-    headerHeight + "px"
-  );
 </script>
 <style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
   html {
     scroll-behavior: smooth;
     scroll-padding: var(--scroll-padding);
-    height: 100vh;
-    background-color: rgb(23, 34, 44);
     color: aliceblue;
   }
   section {
     margin: 0 auto;
+    width: 100%;
   }
   h1 {
     font-size: 4em;

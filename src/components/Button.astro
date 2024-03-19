@@ -1,0 +1,31 @@
+---
+interface Props {
+  text: string;
+  link: string;
+}
+const { text, link } = Astro.props;
+---
+
+<button class="m-6"
+  ><a class="saira-condensed-regular text-xl" href={link}>{text}</a></button
+>
+<style>
+  button {
+
+    width: 200px;
+    height: 30px;
+    border: 2px solid var(--var-secondary-color);
+    border-radius: 5px;
+    transition: 0.5s ease-in;
+    z-index: 5;
+  }
+  a {
+    color: var(--var-secondary-color);
+  }
+  button:hover {
+    background-color: var(--var-secondary-color);
+  }
+  button:hover > a {
+    color: var(--var-bg-color);
+  }
+</style>
