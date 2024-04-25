@@ -3,9 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <section id="productos">
-  <h1
-    class="saira-condensed-medium text-6xl text-center text-zinc-50 p-5 w-full title"
-  >
+  <h1 class="saira-condensed-medium text-6xl text-center p-5 w-full title">
     Nuestros Productos
   </h1>
   <article>
@@ -236,173 +234,182 @@ import Button from "./Button.astro";
         <br />
       </p>
     </div>
-    <picture>
-      <div class="right-side">
-        <picture> <img src="imgs/muebles_melamina.png" alt="" /></picture>
-        <Button text="Consultar Presupuesto" link="#productos" />
-      </div>
-    </picture>
+
+    <div class="right-side">
+      <picture> <img src="imgs/muebles_melamina.png" alt="" /></picture>
+
+      <Button text="Consultar Presupuesto" link="#productos" />
+    </div>
   </article>
+</section>
 
-  <style>
-    details {
-      color: var(--var-text-color);
-      border-bottom: 1px solid var(--var-grey200);
-      width: 80%;
-      overflow: hidden;
-      &:hover {
-        color: var(--var-secondary-color);
-      }
-      p {
-        width: 100%;
-        margin: 1em;
-        padding: 1em;
-      }
-    }
-    details > *:not(summary) {
-      margin: 0 0em 0 1.5em;
-      top: 15px;
-      left: 0px;
-    }
-    details[open] p {
-      animation: open-summary 0.5s linear forwards;
-    }
-    summary {
-      padding: 0.15rem 0.25rem;
-      margin: 0.5em;
-      list-style: none;
-      cursor: pointer;
-      &::marker {
-        color: var(--var-secondary-color);
-      }
-    }
-
-    @keyframes open-summary {
-      0% {
-        opacity: 0;
-        transform: translateX(-100%);
-      }
-    }
-    section {
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: fit;
-    }
-    article {
-      border-left: 20px solid var(--var-primary-color);
-      border-right: 20px solid var(--var-secondary-color);
-      background-color: var(--var-bg-color);
-      padding: 4em 15em;
-      width: 100%;
-      display: flex;
-      &:nth-child(even) {
-        background-color: var(--var-grey100);
-      }
-
-      p {
-        color: var(--var-text-color);
-        width: 75%;
-        font-size: 0.8em;
-      }
-
-      picture {
-        position: relative;
-        width: 300px;
-        height: 300px;
-      }
-
-      picture img {
-        position: relative;
-        z-index: 5;
-      }
-      picture::after {
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        z-index: 1;
-        content: "";
-        width: 150px;
-        height: 150px;
-        border-radius: 20%;
-        background-color: var(--var-primary-color);
-      }
-    }
-    h1 {
+<style>
+  details {
+    color: var(--var-text-color);
+    border-bottom: 1px solid var(--var-grey200);
+    width: 80%;
+    overflow: hidden;
+    &:hover {
       color: var(--var-secondary-color);
-      text-transform: uppercase;
+    }
+    p {
+      width: 100%;
+      margin: 1em;
+      padding: 1em;
+    }
+  }
+  details > *:not(summary) {
+    margin: 0 0em 0 1.5em;
+    top: 15px;
+    left: 0px;
+  }
+  details[open] p {
+    animation: open-summary 0.5s linear forwards;
+  }
+  summary {
+    padding: 0.15rem 0.25rem;
+    margin: 0.5em;
+    list-style: none;
+    cursor: pointer;
+    &::marker {
+      color: var(--var-secondary-color);
+    }
+  }
+
+  @keyframes open-summary {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  section {
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  article {
+    border-left: 20px solid var(--var-primary-color);
+    border-right: 20px solid var(--var-secondary-color);
+    background-color: var(--var-bg-color);
+    padding: 4em 15em;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    &:nth-child(even) {
+      background-color: var(--var-grey100);
+    }
+
+    p {
+      color: var(--var-text-color);
+      width: 75%;
+      font-size: 0.8em;
+    }
+
+    picture {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    picture img {
+      position: relative;
+      z-index: 5;
+    }
+    picture::after {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      z-index: 1;
+      content: "";
+      width: 150px;
+      height: 150px;
+      border-radius: 20%;
+      background-color: var(--var-primary-color);
+    }
+  }
+  .descripcion h1 {
+    color: var(--var-secondary-color);
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+  .title {
+    position: relative;
+    color: var(--var-bg-color);
+    background-color: var(--var-violet200);
+  }
+  .title::after {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: var(--var-violet200);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+  .right-side {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 680px) {
+    section {
+      overflow: hidden;
+      width: 100%;
+      min-height: 100vh;
     }
     .title {
-      position: relative;
-      color: var(--var-bg-color);
-      background-color: var(--var-violet200);
+      padding: 0.2em;
+      font-size: 3em;
+      z-index: 10;
     }
     .title::after {
       position: absolute;
       bottom: -25px;
       left: 50%;
       transform: translateX(-50%);
-
+      z-index: -1;
       content: "";
       width: 50px;
       height: 50px;
       background-color: var(--var-violet200);
       clip-path: polygon(50% 100%, 0 0, 100% 0);
     }
-    .right-side {
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-      flex-direction: column;
-    }
-    @media screen and (max-width: 680px) {
-      section {
-        overflow: hidden;
-        width: 100%;
-        min-height: 100vh;
-      }
-      .title{
-        padding: 0.2em;
-        font-size: 3em;
-        z-index: 10;
-      }
-      .title::after{
-        z-index: -1;
-        bottom: -20px;
-        width: 25px;
-        height: 25px;
-      }
-      article {
-        display: inline;
-        padding: 0.5em 1em;
 
-        p {
+    article {
+      display: inline;
+      padding: 0.5em 1em;
+
+      p {
+        width: 100%;
+      }
+      h1 {
+        font-size: 3em;
+        margin: 0.5em 0;
+      }
+      strong {
+        font-size: 1.5em;
+      }
+      picture {
+        display: none;
+        margin: 1em;
+        &::after {
+          background-color: var(--var-secondary-color);
+          position: relative;
+        }
+        img {
           width: 100%;
         }
-        h1 {
-          font-size: 3em;
-          margin: 0.5em 0;
-        }
-        strong {
-          font-size: 1.5em;
-        }
-        picture {
-          display: none;
-          margin: 1em;
-          &::after {
-            background-color: var(--var-secondary-color);
-            position: relative;
-          }
-          img {
-            width: 100%;
-          }
-          .right-side {
-            display: flex;
-            flex-direction: column;
-          }
+        .right-side {
+          display: flex;
+          flex-direction: column;
         }
       }
     }
-  </style>
-</section>
+  }
+</style>
