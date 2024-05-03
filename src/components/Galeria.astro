@@ -28,6 +28,7 @@ let imagenes = [
     max-height: calc(100% + 100px);
     background-color: var(--var-primary-color);
     h1 {
+      text-align: center;
       padding: 0.5em 0;
       font-size: 4em;
     }
@@ -35,18 +36,23 @@ let imagenes = [
   .galeria_wrapper {
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 600px));
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 600px));
     gap: 10px;
     img {
       width: 600px;
-      height: 400px;
+      height: 300px;
       object-fit: cover;
       filter: grayscale(1) opacity(0.5);
-
       transition: 0.2s ease-in;
     }
     img:hover {
       filter: grayscale(0);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #galeria h1 {
+      font-size: 3em;
     }
   }
 </style>
