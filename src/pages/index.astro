@@ -2,21 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Products from "../components/Products.astro";
 import Header from "../components/Header.astro";
-import Empresa from "../components/Empresa.astro";
 import Home from "../components/Home.astro";
-import Contact from "../components/Contacto.astro";
 import Presupuesto from "../components/Presupuesto.astro";
 import Whatsapp from "../components/Whatsapp.astro";
+import Galeria from "../components/Galeria.astro";
 ---
 
 <Layout title="Bienvenidos a SyS Aberturas." />
 <Whatsapp slot="whatsapp" />
 <Header slot="header" />
-
 <Home slot="home" />
 <Products slot="productos" />
-<Empresa slot="empresa" />
-<Contact slot="contacto" />
+<Galeria slot="galeria" />
 <Presupuesto slot="presupuesto" />
 
 <script>
@@ -40,7 +37,6 @@ import Whatsapp from "../components/Whatsapp.astro";
     scroll-behavior: smooth;
     scroll-padding: var(--scroll-padding);
     color: aliceblue;
-
   }
   section {
     margin: 0 auto;

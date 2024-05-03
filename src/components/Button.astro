@@ -6,21 +6,22 @@ interface Props {
 const { text, link } = Astro.props;
 ---
 
-<button class="m-6"
-  ><a class="saira-condensed-regular text-xl" href={link}>{text}</a></button
->
+<button><a class="saira-condensed-regular" href={link}>{text}</a></button>
 <style>
   button {
-
-    width: 200px;
-    height: 30px;
+    width: 255px;
+    height: 50px;
     border: 2px solid var(--var-secondary-color);
     border-radius: 5px;
     transition: 0.5s ease-in;
     z-index: 5;
+    padding: 10px;
+    margin: 15px;
   }
   a {
     color: var(--var-secondary-color);
+    font-size: 1.2em;
+    text-transform: uppercase;
   }
   button:hover {
     background-color: var(--var-secondary-color);

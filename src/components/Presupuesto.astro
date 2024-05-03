@@ -1,24 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-interface material {
-  nombre: string; 
-  id?: number;
-}
-
-const materiales: Array<material> = [
-  {
-    id: 1,
-    nombre: "aluminio",
-  },
-  { id: 2, nombre: "pvc" },
-  {
-    id: 3,
-    nombre: "madera",
-  },
-];
+import Button from "./Button.astro";
 ---
 
 <section id="presupuesto">
+  <img
+    class="fondo"
+    src="imgs/Carpintería-de-Aluminio.jpg"
+    alt="Carpintería-de-Aluminio"
+  />
   <article class="form_presupuesto">
     <h1 class="saira-condensed-medium text-5xl text-center p-3 uppercase title">
       presupuesto
@@ -27,19 +17,24 @@ const materiales: Array<material> = [
       <fieldset>
         <legend>Datos Personales</legend>
         <div class="input_label">
-          <input type="text" id="name" required placeholder=" "/>
+          <input type="text" id="name" required placeholder=" " />
           <label for="name">Apellido y Nombre</label>
           <Icon name="mdi:account" />
         </div>
         <div class="input_label">
-          <input type="text" name="email" id="email"required placeholder=" " />
+          <input type="text" name="email" id="email" required placeholder=" " />
           <label for="email">email</label>
           <Icon name="mdi:email" />
         </div>
       </fieldset>
       <fieldset>
         <legend>Pedido</legend>
-        <select name="material" id="material">
+        <div class="input_label">
+          <textarea name="pedido" id="pedido" required placeholder=" "
+          ></textarea>
+          <label for="pedido">Describa su pedido: línea, tipo, etc</label>
+        </div>
+        <!-- <select name="material" id="material">
           <option value="0">Seleccionar Material </option>
           {
             materiales.map((m) => (
@@ -55,52 +50,27 @@ const materiales: Array<material> = [
           <label for="alto">altura</label>
           <input type="number" required placeholder=" " name="ancho" />
           <label for="alto">ancho</label>
-        </div>
+        </div> -->
       </fieldset>
+      <Button
+        text="Consultar Presupuesto"
+        link="https://wa.me/5492920249972/?text=Necesito Presupuesto"
+      />
     </form>
   </article>
 </section>
-<script is:inline>
-  const linea = [
-    [],
-    ["herrero", "modena", "premium"],
-    ["economica", "media", "premium"],
-    ["melamina", "contrachapado", "mdf"],
-  ];
-  const tipo = [
-    ["Puerta", "Ventana", "Porton"],
-    ["Ciega", "Con vidrio repartido", "Vidrio entero"],
-    ["Con vidrio repartido", "Vidrio entero"],
-    ["Corrediza", "Patagonica"],
-  ];
-  let select_material = document.getElementById("material");
-  let select_linea = document.getElementById("linea");
-  select_material.addEventListener("change", (e) => {
-    // removemos los options
-
-    if (select_linea != null) {
-      while (select_linea.firstChild) {
-        select_linea.removeChild(select_linea.firstChild);
-      }
-    }
-
-    select_prod_linea = linea[select_material.value];
-
-    if (select_prod_linea.length > 0) {
-      select_prod_linea.forEach((linea) => {
-        let option = document.createElement("option");
-        option.setAttribute("value", linea);
-        text = document.createTextNode(linea);
-        option.appendChild(text);
-        select_linea.appendChild(option);
-      });
-    }
+<script>
+  document.addEventListener("click", function () {
+    let mensaje = document.getElementById("pedido");
+    let nombre = document.getElementById("name");
+    let email = document.getElementById("email");
+    let $mensaje_completo = email?.value + nombre?.value + mensaje?.value;
   });
 </script>
 <style>
   .title {
     background: linear-gradient(to top, rgb(106, 5, 120), rgb(76, 6, 85));
-   
+    margin: 1em 0.5em;
   }
   section {
     height: 100vh;
@@ -109,12 +79,18 @@ const materiales: Array<material> = [
     justify-content: center;
     align-items: center;
   }
+  .fondo {
+    width: 40%;
+    height: 100vh;
+    object-fit: cover;
+  }
   .form_presupuesto {
     background-color: var(--var-bg-color);
     padding: 15px;
-    width: 80%;
-    height: 90%;
+    width: 60%;
+    height: 100%;
     border-radius: 10px;
+    z-index: 10;
   }
   #formulario {
     margin-top: 25px;
@@ -125,7 +101,6 @@ const materiales: Array<material> = [
     align-items: center;
   }
   #formulario fieldset {
-    
     border-radius: 5px;
     width: 100%;
     padding: 10px;
@@ -157,40 +132,47 @@ const materiales: Array<material> = [
     width: 100%;
     padding-left: 39px;
   }
-  label{
+  label {
     position: absolute;
     top: 25px;
     left: 55px;
     color: var(--var-grey200);
     transition: 0.5s ease-in-out;
-    
   }
   input:focus,
-    textarea:focus {
-      border-color: var(--var-violet200);
-     
-    }
-  input::placeholder{
-    color: transparent
+  textarea:focus {
+    border-color: var(--var-violet200);
   }
-  svg{
+  input::placeholder {
+    color: transparent;
+  }
+  svg {
     position: absolute;
     top: 27px;
     left: 30px;
     font-size: 1.2em;
     color: var(--var-grey200);
     transition: 0.5s ease;
-   }
-   input:focus ~ svg{
+  }
+  input:focus ~ svg {
     color: var(--var-primary-color);
-   }
-   input:focus + label,
-    textarea:focus + label,
-    input:not(:placeholder-shown) ~ label,
-    textarea:not(:placeholder-shown) ~ label {
-      top: -5px;
-      left: 15px;
-      font-size: 12px;
-      color: var(--var-primary-color);
-    }
+  }
+  input:focus + label,
+  textarea:focus + label,
+  input:not(:placeholder-shown) ~ label,
+  textarea:not(:placeholder-shown) ~ label {
+    top: -5px;
+    left: 15px;
+    font-size: 12px;
+    color: var(--var-primary-color);
+  }
+  textarea {
+    outline: none;
+    color: var(--var-text-color);
+    width: 90%;
+    height: 300px;
+    border-radius: 5px;
+    border: 2px solid var(--var-grey100);
+    padding: 1em;
+  }
 </style>
