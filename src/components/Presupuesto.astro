@@ -36,23 +36,6 @@ import Button from "./Button.astro";
           ></textarea>
           <label for="pedido">Describa su pedido: línea, tipo, etc</label>
         </div>
-        <!-- <select name="material" id="material">
-          <option value="0">Seleccionar Material </option>
-          {
-            materiales.map((m) => (
-              <option value={m.id}>{m.nombre.toUpperCase()} </option>
-            ))
-          }
-        </select>
-        <select name="linea" id="linea">
-          <option value="0" aria-readonly="true">Seleccione un producto</option>
-        </select>
-        <div class="content-medida">
-          <input type="number" required placeholder=" " name="alto" />
-          <label for="alto">altura</label>
-          <input type="number" required placeholder=" " name="ancho" />
-          <label for="alto">ancho</label>
-        </div> -->
       </fieldset>
       <Button
         text="Consultar Presupuesto"
@@ -61,14 +44,7 @@ import Button from "./Button.astro";
     </form>
   </article>
 </section>
-<script>
-  document.addEventListener("click", function () {
-    let mensaje = document.getElementById("pedido");
-    let nombre = document.getElementById("name");
-    let email = document.getElementById("email");
-    // let $mensaje_completo = email?.value + nombre?.value + mensaje?.value;
-  });
-</script>
+
 <style>
   .title {
     background: linear-gradient(to top, rgb(106, 5, 120), rgb(76, 6, 85));
