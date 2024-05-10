@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 interface links {
   link: string;
   name: string;
@@ -31,15 +32,27 @@ let links: Array<links> = [
   <picture>
     <img src="imgs/logo.svg" alt="" />
   </picture>
+
   <nav>
+    <img src="imgs/logo_long.svg" alt="" />
+    <input type="checkbox" name="menu" id="menu" />
+    <label class="menu" for="menu">
+      <Icon class="hamburger" name="mdi:menu" />
+      <Icon class="cancel" name="mdi:close" />
+    </label>
     <ul>
-      <img src="imgs/logo_long.svg" alt="" />
       {links.map((link) => <a href={link.link}>{link.name}</a>)}
     </ul>
   </nav>
 </header>
 
 <style>
+  #menu {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
   #header {
     z-index: 20;
     position: fixed;
@@ -51,96 +64,156 @@ let links: Array<links> = [
     width: 100%;
     background: linear-gradient(to bottom, white, 85%, rgb(126, 124, 124));
     transition: 0.5s ease-in-out;
-    picture img {
-      margin-bottom: 30px;
-      width: 450px;
-      height: 140px;
-      transition: 0.75s ease-in;
-    }
+  }
+  picture img {
+    margin-bottom: 30px;
+    width: 450px;
+    height: 140px;
+    transition: 0.75s ease-in;
+  }
 
-    nav {
-      display: flex;
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background-color: var(--var-primary-color);
+    box-shadow: 0px 0px 25px rgba(1, 1, 1, 0.2);
+    transition: 0.5s ease-out;
+  }
+  nav img {
+    display: none;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+  }
+  ul img {
+    height: 35px;
+    transform: translateY(-50px);
+    transition: 0.75s ease-in;
+    margin-right: 1em;
+    opacity: 0;
+    display: none;
+  }
 
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 40px;
-      width: 100%;
-      background: var(--var-primary-color);
-      box-shadow: 0px 0px 25px rgba(1, 1, 1, 0.2);
-      transition: 0.5s ease-out;
+  ul a {
+    z-index: 3;
+    position: relative;
+    padding: 0px 15px;
+    line-height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease-in;
+  }
+  ul a:hover {
+    background-color: var(--var-secondary-color);
+    color: white;
+  }
 
-      ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s;
-        img {
-          height: 35px;
-          transform: translateY(-50px);
-          transition: 0.75s ease-in;
-          margin-right: 1em;
-          opacity: 0;
-          display: none;
-        }
-        a {
-          z-index: 3;
-          position: relative;
-          padding: 0px 15px;
-          line-height: 40px;
-          font-size: 14px;
-          text-transform: uppercase;
-          text-decoration: none;
-          color: white;
-          transition: 0.3s ease-in;
-          &:hover {
-            background-color: var(--var-secondary-color);
-            color: white;
-          }
-
-          &::before {
-            z-index: 1;
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            border-left: 10px solid var(--var-secondary-color);
-            border-right: 10px solid transparent;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid var(--var-secondary-color);
-            transform: rotate(-45deg) translateX(-50%);
-            opacity: 0;
-            transition: 0.2s ease-in;
-          }
-          &:hover::before {
-            opacity: 1;
-            bottom: 0;
-          }
-        }
-      }
-    }
+  ul a::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    border-left: 10px solid var(--var-secondary-color);
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid var(--var-secondary-color);
+    transform: rotate(-45deg) translateX(-50%);
+    opacity: 0;
+    transition: 0.2s ease-in;
+  }
+  a:hover::before {
+    opacity: 1;
+    bottom: 0;
   }
   #header.scrollear {
     height: 55px;
-    img {
-      transform: translateY(-150px);
-    }
+  }
+  #header.scrollear img {
+    transform: translateY(-150px);
+  }
+  #header.scrollear nav {
+    height: 100%;
+  }
+  #header.scrollear nav img {
+    position: relative;
+    display: block;
+    transform: translateY(0px);
+    opacity: 1;
+    display: block;
+    width: 250px;
+  }
+  #header.scrollear ul {
+    top: 55px;
+  }
+
+  @media screen and (max-width: 1020px) {
     nav {
-      height: 100%;
+      justify-content: space-between;
+      padding: 0.5em;
     }
-    nav ul img {
-      position: relative;
-      display: block;
-      transform: translateY(0px);
-      opacity: 1;
-      display: block;
+    .cancel {
+      display: none;
     }
-    ul {
+    .menu {
+      display: block;
+      z-index: 150;
+      position: absolute;
+      right: 5px;
+    }
+    nav ul {
+      background-color: rgba(1, 1, 1, 0.8);
+      position: fixed;
+      top: 110px;
+      left: -100%;
+      display: block;
+      width: 100%;
+      height: 100vh;
+      z-index: 100;
+    }
+    #header nav ul a {
+      font-size: 1.2em;
+      letter-spacing: 2px;
+      text-align: center;
+      display: block;
+      height: 75px;
+      line-height: 75px;
+    }
+    #header img {
+      width: 250px;
+      height: 100px;
+    }
+    #header {
+      height: 150px;
+      overflow: hidden;
     }
   }
-  @media screen and (max-width: 780px) {
+
+  #menu:checked ~ ul {
+    left: 0;
+  }
+  #menu:checked ~ .menu .cancel {
+    display: block;
+  }
+  #menu:checked ~ .menu .hamburger {
+    display: none;
+  }
+
+  .menu {
+    font-size: 3em;
+  }
+  @media screen and (max-width: 480px) {
     #header nav a {
       display: none;
     }
@@ -152,5 +225,8 @@ let links: Array<links> = [
       height: 150px;
       overflow: hidden;
     }
+  }
+  #menu {
+    font-size: 2em;
   }
 </style>

@@ -119,11 +119,7 @@ import Button from "./Button.astro";
           </p>
         </details>
       </p>
-    </div>
-    <div class="right-side">
-      <!-- <picture>
-        <img src="imgs/lmodena.png" alt="imagen de productos" />
-      </picture> -->
+
       <Button text="Consultar Presupuesto" link="#presupuesto" />
     </div>
   </article>
@@ -203,11 +199,7 @@ import Button from "./Button.astro";
           calefacción y refrigeración a lo largo del tiempo.
         </p>
       </details>
-    </div>
-    <div class="right-side">
-      <!-- <picture>
-        <img src="imgs/lPVC.png" alt="imagen de productos" />
-      </picture> -->
+
       <Button text="Consultar Presupuesto" link="#presupuesto" />
     </div>
   </article>
@@ -231,9 +223,7 @@ import Button from "./Button.astro";
         <hr />
         <br />
       </p>
-    </div>
 
-    <div class="right-side">
       <Button text="Consultar Presupuesto" link="#presupuesto" />
     </div>
   </article>
@@ -255,6 +245,51 @@ import Button from "./Button.astro";
       </div>
     </div>
   </article>
+  <article>
+    <img
+      class="img_left"
+      src="imgs/rollerslide001.jpg"
+      alt="imagen de productos"
+    />
+    <div class="descripcion">
+      <h1 class="saira-condensed-medium text-6xl">Persianas RollerStar</h1>
+      <p>
+        Las persianas Roller Star son la elección perfecta para combinar estilo
+        y funcionalidad en cualquier espacio. Con su diseño moderno y versátil,
+        ofrecen una serie de beneficios:
+        <ul>
+          <li>
+            <strong>Control de luz y privacidad:</strong> Permiten regular la entrada
+            de luz y mantener la privacidad según tus necesidades.
+          </li>
+          <li>
+            Aislamiento térmico: Ayudan a mantener una temperatura confortable
+            en el interior, tanto en verano como en invierno.
+          </li>
+          <li>
+            <strong>Ahorro energético:</strong> Reducen la necesidad de utilizar
+            sistemas de calefacción o aire acondicionado, lo que se traduce en ahorro
+            de energía y costos.
+          </li>
+          <li>
+            <strong>Estética moderna:</strong> Su diseño elegante y contemporáneo
+            complementa cualquier decoración existente.
+          </li>
+          <li>
+            <strong>Fácil mantenimiento:</strong> Son fáciles de limpiar y mantener,
+            manteniendo su aspecto impecable con poco esfuerzo.
+          </li>
+        </ul>
+      </p>
+      <p>
+        En conclusión, las persianas Roller Star no solo embellecen los
+        espacios, sino que también mejoran el confort y la funcionalidad de
+        manera práctica y elegante.<br /><br />
+      </p>
+
+      <Button text="Consultar Presupuesto" link="#presupuesto" />
+    </div>
+  </article>
 </section>
 
 <style>
@@ -266,14 +301,10 @@ import Button from "./Button.astro";
     &:hover {
       color: var(--var-secondary-color);
     }
-    p {
-      width: 100%;
-      margin: 1em;
-      padding: 1em;
-    }
   }
+
   details > *:not(summary) {
-    margin: 0 0em 0 1.5em;
+    margin: 0 0 0 1.5em;
     top: 15px;
     left: 0px;
   }
@@ -285,9 +316,9 @@ import Button from "./Button.astro";
     margin: 0.5em;
     list-style: none;
     cursor: pointer;
-    &::marker {
-      color: var(--var-secondary-color);
-    }
+  }
+  summary::marker {
+    color: var(--var-secondary-color);
   }
 
   @keyframes open-summary {
@@ -316,45 +347,48 @@ import Button from "./Button.astro";
     grid-template-rows: 2fr;
     column-gap: 25px;
     background-color: var(--var-bg-color);
-
     width: 100%;
     height: max-content;
-    &:nth-child(even) {
-      background-color: var(--var-grey100);
-    }
-
-    p {
-      color: var(--var-text-color);
-      width: 95%;
-      text-align: justify;
-      font-size: 1.1em;
-    }
-
-    picture {
-      margin: 2em;
-      position: relative;
-      width: 300px;
-      height: 300px;
-    }
-
-    picture img {
-      position: relative;
-      z-index: 5;
-    }
-    picture::after {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      z-index: 1;
-      content: "";
-      width: 250px;
-      height: 250px;
-      border-radius: 10%;
-      background-color: var(--var-primary-color);
-    }
   }
+
+  /**article class */
+  article:nth-child(even) {
+    background-color: var(--var-grey100);
+  }
+
+  article p {
+    color: var(--var-text-color);
+    width: 95%;
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+  article picture {
+    margin: 2em;
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  article picture img {
+    position: relative;
+    z-index: 5;
+  }
+  article picture::after {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+    content: "";
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    background-color: var(--var-primary-color);
+  }
+  /** end article class */
+
   .descripcion {
-    padding: 2em;
+    padding: 2em 5em;
   }
   .descripcion h1 {
     color: var(--var-secondary-color);
@@ -395,37 +429,31 @@ import Button from "./Button.astro";
     }
     article {
       width: 100%;
-      padding: 1em 4em;
-
-      p {
-        width: 100%;
-        font-size: 1em;
-      }
-      h1 {
-        font-size: 3em;
-        margin: 0.5em 0;
-      }
-      strong {
-        font-size: 1.5em;
-      }
-      picture {
-        display: flex;
-        margin: 1em;
-        &::after {
-          background-color: var(--var-secondary-color);
-          position: relative;
-        }
-        img {
-          width: 100%;
-        }
-        .right-side {
-          display: flex;
-          flex-direction: column;
-        }
-      }
+    }
+    article p {
+      width: 100%;
+      font-size: 1em;
+    }
+    article h1 {
+      font-size: 3em;
+      margin: 0.5em 0;
+    }
+    article strong {
+      font-size: 1.5em;
+    }
+    article picture {
+      display: flex;
+      margin: 1em;
+    }
+    article picture::after {
+      background-color: var(--var-secondary-color);
+      position: relative;
+    }
+    img {
+      width: 100%;
     }
   }
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 768px) {
     section {
       overflow: hidden;
       width: 100%;
@@ -451,33 +479,47 @@ import Button from "./Button.astro";
 
     article {
       display: inline;
-      padding: 0.5em 1em;
-
-      p {
-        width: 100%;
-      }
-      h1 {
-        font-size: 3em;
-        margin: 0.5em 0;
-      }
-      strong {
-        font-size: 1.5em;
-      }
-      picture {
-        display: none;
-        margin: 1em;
-        &::after {
-          background-color: var(--var-secondary-color);
-          position: relative;
-        }
-        img {
-          width: 100%;
-        }
-        .right-side {
-          display: flex;
-          flex-direction: column;
-        }
-      }
     }
+    .descripcion {
+      width: 100%;
+      padding: 1em;
+    }
+    p {
+      padding: 1em;
+      width: 90%;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0.5em 0;
+    }
+    strong {
+      font-size: 1.2rem;
+    }
+    picture {
+      height: 100px;
+      width: 100%;
+      background-color: aqua;
+    }
+    img {
+      width: 100%;
+      height: 150px;
+
+      object-fit: cover;
+    }
+    ul li strong {
+      font-size: 1rem;
+      display: block;
+    }
+  }
+  ul {
+    color: var(--var-text-color);
+    margin: 1em;
+  }
+  ul li {
+    padding: 0.5em;
+  }
+  ul li strong {
+    color: var(--var-primary-color);
+    text-transform: uppercase;
   }
 </style>
